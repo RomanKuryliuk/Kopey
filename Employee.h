@@ -2,17 +2,17 @@
 
 class Employee
 {
-	char* name, * surname;			//рядкові поля класу, тип доступу privat
+	char* name, * surname;			
 
 public:
-	Employee();			//конструктор за замовчуванням
-	Employee(char*, char*);			//конструктор з параметрами
-	Employee(Employee&);			//конструктор копіювання
-	~Employee();			//деструктор
-	virtual void description();			//опис
-	Employee& set_name(char*);			//модифікатори
+	Employee();			
+	Employee(char*, char*);			
+	Employee(Employee&);			
+	~Employee();			
+	virtual void description();			//віртуальна функція виводу інформації
+	Employee& set_name(char*);			
 	Employee& set_surname(char*);
-	char* get_name();			//селектори
+	char* get_name();			
 	char* get_surname();
 };
 

@@ -11,7 +11,7 @@ public:
     Operator();
     Operator(char*, char*, char*, char*);
     ~Operator();
-    void description();
+    void description();         //віртуальна функція виводу інформації
     Operator& set_phone(char*);
     Operator& set_language(char*);
     char* get_phone();
