@@ -10,8 +10,8 @@ using namespace std;
 
 Driver::Driver()
 {
-	cout << "Driver " << this << " default constructor" << endl << endl;
-	_getch();			//очікування натискання кнопки
+	//cout << "Driver " << this << " default constructor" << endl << endl;
+	//_getch();			//очікування натискання кнопки
 
 	name = new char[8];			//виділення пам'яті
 	strcpy_s(name, 8, "noname");			//копіювання значення
@@ -21,8 +21,8 @@ Driver::Driver()
 
 Driver::Driver(char* title1, char* title2)
 {
-	cout << "Driver " << this << " constructor with parameters" << endl << endl;
-	_getch();			//очікування натискання кнопки
+	//cout << "Driver " << this << " constructor with parameters" << endl << endl;
+	//_getch();			//очікування натискання кнопки
 
 	name = new char[strlen(title1) + 1];			//виділення пам'яті
 	strcpy_s(name, strlen(title1) + 1, title1);			//копіювання значення
@@ -32,8 +32,8 @@ Driver::Driver(char* title1, char* title2)
 
 Driver::Driver(Driver& temp)
 {
-	cout << "Driver " << this << " copy constructor" << endl << endl;
-	_getch();			//очікування натискання кнопки
+	//cout << "Driver " << this << " copy constructor" << endl << endl;
+	//_getch();			//очікування натискання кнопки
 
 	name = new char[strlen(temp.get_name()) + 1];			//виділення пам'яті
 	strcpy_s(name, strlen(temp.get_name()) + 1, temp.get_name());			//копіювання значення
@@ -43,8 +43,8 @@ Driver::Driver(Driver& temp)
 
 Driver::~Driver()
 {
-	cout << "Driver " << this << " destructor" << endl << endl;
-	_getch();			//очікування натискання кнопки
+	//cout << "Driver " << this << " destructor" << endl << endl;
+	//_getch();			//очікування натискання кнопки
 
 	delete[] name, surname;			//очищення пам'яті
 }

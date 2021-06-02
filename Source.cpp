@@ -12,32 +12,43 @@
 using namespace std;		//для потокового вводу-виводу
 
 int main() {
-
-	Driver driver1;			//оголошення об'єкту за замовчуванням
-	cout << "Description of default driver: " << endl << driver1.description() << endl << endl;		
-
-	Trip trip1;			//оголошення об'єкту за замовчуванням
-	cout << "Description of default trip: " << endl << trip1.description() << endl << endl;
-
-	cout << "Enter driver's name and surname" << endl;
-	char* temp1, * temp2;			
+	cout << "Enter first trip from, to and cost:" << endl;
+	char* temp1, * temp2, * temp3, * temp4;
+	int temp;
 	temp1 = new char[1];
 	temp2 = new char[1];
-	cin >> temp1 >> temp2;
+	temp3 = new char[1];
+	temp4 = new char[1];
+	cin >> temp1 >> temp2 >> temp;
 	cout << endl;
 
-	Driver driver2(temp1, temp2);			//оголошення об'єкту з параметрами
-	cout << "Description of driver with parameters: " << endl << driver2.description() << endl << endl;
-
-	cout << "Enter trip's from and to" << endl;
-	cin >> temp1 >> temp2;	
+	cout << "Enter first driver name and surname:" << endl;
+	cin >> temp3 >> temp4;
 	cout << endl;
 
-	Trip trip2(temp1, temp2, driver2);			//оголошення об'єкту з параметрами
-	cout << "Description of trip with parameters: " << endl << trip2.description() << endl << endl;
+	Driver d1(temp3, temp4);
+	Trip t1(temp1, temp2, d1, temp);
 
-	Driver driver3(driver2);			//оголошення об'єкту копіюванням
-	cout << "Description of copy driver: " << endl << driver2.description() << endl << endl;
+	cout << t1 << endl << endl;
+
+	cout << "Enter second trip from, to and cost:" << endl;
+	cin >> temp1 >> temp2 >> temp;
+	cout << endl;
+
+	cout << "Enter second driver name and surname:" << endl;
+	cin >> temp3 >> temp4;
+	cout << endl;
+
+	Driver d2(temp3, temp4);
+	Trip t2(temp1, temp2, d2, temp);
+
+	cout << t2 << endl << endl;
+
+	cout << "First trip >= second trip" << endl << (t1 >= t2);
+	cout << endl << endl;
+
+	cout << "First trip < second trip" << endl << (t1 < t2);
+	cout << endl << endl;
 
 	_getch();			//очікування натискання кнопки
 }
