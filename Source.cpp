@@ -5,50 +5,42 @@
 #include <iostream>
 #include <windows.h>
 #include <conio.h>
+#include <vector>
 
 #include "Driver.h"			//підключення двох реалізованих класів
-#include "Trip.h"
+#include "Employee.h"
+#include "Operator.h"
 
 using namespace std;		//для потокового вводу-виводу
 
 int main() {
-	cout << "Enter first trip from, to and cost:" << endl;
+	
+	vector<Employee*> taxi(3);
+	
 	char* temp1, * temp2, * temp3, * temp4;
-	int temp;
 	temp1 = new char[1];
 	temp2 = new char[1];
 	temp3 = new char[1];
 	temp4 = new char[1];
-	cin >> temp1 >> temp2 >> temp;
+
+	cout << "Enter employee name and surname:" << endl;
+	cin >> temp1 >> temp2;
 	cout << endl;
+	taxi[0] = new Employee(temp1, temp2);
 
-	cout << "Enter first driver name and surname:" << endl;
-	cin >> temp3 >> temp4;
+	cout << "Enter driver name, surname, car, place:" << endl;
+	cin >> temp1 >> temp2 >> temp3 >> temp4;
 	cout << endl;
+	taxi[1] = new Driver(temp1, temp2, temp3, temp4);
 
-	Driver d1(temp3, temp4);
-	Trip t1(temp1, temp2, d1, temp);
-
-	cout << t1 << endl << endl;
-
-	cout << "Enter second trip from, to and cost:" << endl;
-	cin >> temp1 >> temp2 >> temp;
+	cout << "Enter operator name, surname, phone, language:" << endl;
+	cin >> temp1 >> temp2 >> temp3 >> temp4;
 	cout << endl;
+	taxi[2] = new Operator(temp1, temp2, temp3, temp4);
 
-	cout << "Enter second driver name and surname:" << endl;
-	cin >> temp3 >> temp4;
-	cout << endl;
-
-	Driver d2(temp3, temp4);
-	Trip t2(temp1, temp2, d2, temp);
-
-	cout << t2 << endl << endl;
-
-	cout << "First trip >= second trip" << endl << (t1 >= t2);
-	cout << endl << endl;
-
-	cout << "First trip < second trip" << endl << (t1 < t2);
-	cout << endl << endl;
+	for (Employee* item : taxi) {
+		item->description();
+	}
 
 	_getch();			//очікування натискання кнопки
 }

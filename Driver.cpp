@@ -10,78 +10,62 @@ using namespace std;
 
 Driver::Driver()
 {
-	//cout << "Driver " << this << " default constructor" << endl << endl;
-	//_getch();			//очікування натискання кнопки
+	cout << "Driver " << this << " default constructor" << endl << endl;
+	_getch();			//очікування натискання кнопки
 
-	name = new char[8];			//виділення пам'яті
-	strcpy_s(name, 8, "noname");			//копіювання значення
-	surname = new char[11];			//виділення пам'яті
-	strcpy_s(surname, 11, "surname");			//копіювання значення
+	car = new char[6];			//виділення пам'яті
+	strcpy_s(car, 6, "nocar");			//копіювання значення
+	place = new char[8];			//виділення пам'яті
+	strcpy_s(place, 8, "noplace");			//копіювання значення
 }
 
-Driver::Driver(char* title1, char* title2)
+Driver::Driver(char* title1, char* title2, char* title3, char* title4):
+	Employee(title1, title2)
 {
-	//cout << "Driver " << this << " constructor with parameters" << endl << endl;
-	//_getch();			//очікування натискання кнопки
+	cout << "Driver " << this << " constructor with parameters" << endl << endl;
+	_getch();			//очікування натискання кнопки
 
-	name = new char[strlen(title1) + 1];			//виділення пам'яті
-	strcpy_s(name, strlen(title1) + 1, title1);			//копіювання значення
-	surname = new char[strlen(title2) + 1];			//виділення пам'яті
-	strcpy_s(surname, strlen(title2) + 1, title2);			//копіювання значення
-}
-
-Driver::Driver(Driver& temp)
-{
-	//cout << "Driver " << this << " copy constructor" << endl << endl;
-	//_getch();			//очікування натискання кнопки
-
-	name = new char[strlen(temp.get_name()) + 1];			//виділення пам'яті
-	strcpy_s(name, strlen(temp.get_name()) + 1, temp.get_name());			//копіювання значення
-	surname = new char[strlen(temp.get_surname()) + 1];			//виділення пам'яті
-	strcpy_s(surname, strlen(temp.get_surname()) + 1, temp.get_surname());			//копіювання значення
+	car = new char[strlen(title3) + 1];			//виділення пам'яті
+	strcpy_s(car, strlen(title3) + 1, title3);			//копіювання значення
+	place = new char[strlen(title4) + 1];			//виділення пам'яті
+	strcpy_s(place, strlen(title4) + 1, title4);			//копіювання значення
 }
 
 Driver::~Driver()
 {
-	//cout << "Driver " << this << " destructor" << endl << endl;
-	//_getch();			//очікування натискання кнопки
+	cout << "Driver " << this << " destructor" << endl << endl;
+	_getch();			//очікування натискання кнопки
 
-	delete[] name, surname;			//очищення пам'яті
+	delete[] car, place;			//очищення пам'яті
 }
 
-char* Driver::description()			//реалізація опису
+void Driver::description()
 {
-	char* a;			//оголошення тимчасової змінної
-	a = new char[strlen(name) + strlen(surname) + 10];			//її ініціалізація
-	strcpy_s(a, 9, "Driver ");			//заповнення рядка опису
-	strcat(a, name);
-	strcat(a, " ");
-	strcat(a, surname);
-	return a;
+	cout << "Driver car:" << car << ", place:" << place << endl << endl;
 }
 
-Driver& Driver::set_name(char* title)			//реалізація селектора
+Driver& Driver::set_car(char* title)
 {
-	delete[] name;			//очищення пам'яті
-	name = new char[strlen(title) + 1];			//виділення памяті під поле об'єкта
-	strcpy_s(name, strlen(title) + 1, title);			//копіювання введеного значення в поле
+	delete[] car;			//очищення пам'яті
+	car = new char[strlen(title) + 1];			//виділення памяті під поле об'єкта
+	strcpy_s(car, strlen(title) + 1, title);			//копіювання введеного значення в поле
 	return *this;
 }
 
-Driver& Driver::set_surname(char* title)			//аналогічно
+Driver& Driver::set_place(char* title)
 {
-	delete[] surname;			//очищення пам'яті
-	surname = new char[strlen(title) + 1];
-	strcpy_s(surname, strlen(title) + 1, title);
+	delete[] place;			//очищення пам'яті
+	place = new char[strlen(title) + 1];
+	strcpy_s(place, strlen(title) + 1, title);
 	return *this;
 }
 
-char* Driver::get_name()			//селектор
+char* Driver::get_car()
 {
-	return name;
+	return car;
 }
 
-char* Driver::get_surname()			//селектор
+char* Driver::get_place()
 {
-	return surname;
+	return place;
 }

@@ -1,18 +1,20 @@
 #pragma once
 
-class Driver
+#include "Employee.h"
+
+class Driver :
+    public Employee
 {
-	char* name, * surname;			//рядкові поля класу, тип доступу privat
+    char* car, * place;
 
 public:
-	Driver();			//конструктор за замовчуванням
-	Driver(char*, char*);			//конструктор з параметрами
-	Driver(Driver&);			//конструктор копіювання
-	~Driver();			//деструктор
-	char* description();			//опис
-	Driver& set_name(char*);			//модифікатори
-	Driver& set_surname(char*);
-	char* get_name();			//селектори
-	char* get_surname();
+    Driver();
+    Driver(char*, char*, char*, char*);
+    ~Driver();
+    void description();
+    Driver& set_car(char*);
+    Driver& set_place(char*);
+    char* get_car();
+    char* get_place();
 };
 

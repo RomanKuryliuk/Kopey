@@ -15,21 +15,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Driver.cpp">
-      <Filter>Файлы заголовков</Filter>
+    <ClCompile Include="Employee.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Source.cpp">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Trip.cpp">
-      <Filter>Файлы заголовков</Filter>
+    <ClCompile Include="Operator.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Driver.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Driver.h">
+    <ClInclude Include="Employee.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Trip.h">
+    <ClInclude Include="Operator.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
