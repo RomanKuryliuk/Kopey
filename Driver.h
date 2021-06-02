@@ -5,10 +5,10 @@ class Driver
 	char* name, * surname;			//рядкові поля класу, тип доступу privat
 
 public:
-	Driver();
-	Driver(char*, char*);
-	Driver(Driver&);
-	~Driver();
+	Driver();			//конструктор за замовчуванням
+	Driver(char*, char*);			//конструктор з параметрами
+	Driver(Driver&);			//конструктор копіювання
+	~Driver();			//деструктор
 	char* description();			//опис
 	Driver& set_name(char*);			//модифікатори
 	Driver& set_surname(char*);

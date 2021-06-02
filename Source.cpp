@@ -13,38 +13,31 @@ using namespace std;		//для потокового вводу-виводу
 
 int main() {
 
-	Driver driver1;			//оголошення об'єкту класу "водій"
+	Driver driver1;			//оголошення об'єкту за замовчуванням
+	cout << "Description of default driver: " << endl << driver1.description() << endl << endl;		
+
+	Trip trip1;			//оголошення об'єкту за замовчуванням
+	cout << "Description of default trip: " << endl << trip1.description() << endl << endl;
 
 	cout << "Enter driver's name and surname" << endl;
-
-	char* temp1, * temp2;			//оголошення, ініціалізація і заповнення тимчасових файлів
+	char* temp1, * temp2;			
 	temp1 = new char[1];
 	temp2 = new char[1];
 	cin >> temp1 >> temp2;
-
-	driver1.set_name(temp1);			//заповнення полів класу введеними значеннями
-	driver1.set_surname(temp2);
-
 	cout << endl;
 
-	Trip trip1;			//оголошення об'єкту класу "поїздка"
+	Driver driver2(temp1, temp2);			//оголошення об'єкту з параметрами
+	cout << "Description of driver with parameters: " << endl << driver2.description() << endl << endl;
 
 	cout << "Enter trip's from and to" << endl;
-
-	cin >> temp1 >> temp2;			//заповнення тимчасових файлів
-
-	trip1.set_from(temp1);		//заповнення полів класу введеними значеннями
-	trip1.set_to(temp2);
-
+	cin >> temp1 >> temp2;	
 	cout << endl;
 
-	cout << "Description of driver:" << endl << driver1.description() << endl;			//вивід опису о'єкту класу
-	cout << endl;
-	cout << "Description of trip:" << endl << trip1.description() << endl;			//вивід опису о'єкту класу
-	cout << endl;
+	Trip trip2(temp1, temp2, driver2);			//оголошення об'єкту з параметрами
+	cout << "Description of trip with parameters: " << endl << trip2.description() << endl << endl;
 
-	cout << "Implementation of driver selectors:" << endl << driver1.get_name() << " " << driver1.get_surname() << endl;
-	cout << endl;																								//показ роботи селекторів
-	cout << "Implementation of trip selectors:" << endl << trip1.get_from() << " " <<trip1.get_to() << endl;			
-	cout << endl;																					//показ роботи селекторів
+	Driver driver3(driver2);			//оголошення об'єкту копіюванням
+	cout << "Description of copy driver: " << endl << driver2.description() << endl << endl;
+
+	_getch();			//очікування натискання кнопки
 }
