@@ -5,6 +5,10 @@ class Driver
 	char* name, * surname;			//рядкові поля класу, тип доступу privat
 
 public:
+	Driver();
+	Driver(char*, char*);
+	Driver(Driver&);
+	~Driver();
 	char* description();			//опис
 	Driver& set_name(char*);			//модифікатори
 	Driver& set_surname(char*);

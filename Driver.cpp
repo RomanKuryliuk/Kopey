@@ -1,8 +1,28 @@
 #include <string>
+#include <iostream>
 
 #include "Driver.h"
 
 #pragma warning(disable : 4996)
+
+using namespace std;
+
+Driver::Driver()
+{
+	
+}
+
+Driver::Driver(char*, char*)
+{
+}
+
+Driver::Driver(Driver&)
+{
+}
+
+Driver::~Driver()
+{
+}
 
 char* Driver::description()			//реалізація опису
 {
