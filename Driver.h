@@ -1,9 +1,10 @@
 #pragma once
 
 #include "Employee.h"
+#include "Count.h"
 
 class Driver :
-    public Employee
+    public Employee, public Count //наслідування від двох класів
 {
     char* car, * place;
 

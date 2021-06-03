@@ -19,15 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Count.cpp" />
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="Employee.cpp" />
-    <ClCompile Include="Operator.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Count.h" />
     <ClInclude Include="Driver.h" />
     <ClInclude Include="Employee.h" />
-    <ClInclude Include="Operator.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

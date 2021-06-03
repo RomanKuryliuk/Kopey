@@ -10,8 +10,8 @@ using namespace std;
 
 Employee::Employee()
 {
-	cout << "Employee " << this << " default constructor" << endl << endl;
-	_getch();			//очікування натискання кнопки
+	//cout << "Employee " << this << " default constructor" << endl << endl;
+	//_getch();			//очікування натискання кнопки
 
 	name = new char[8];			//виділення пам'яті
 	strcpy_s(name, 8, "noname");			//копіювання значення
@@ -21,8 +21,8 @@ Employee::Employee()
 
 Employee::Employee(char* title1, char* title2)
 {
-	cout << "Employee " << this << " constructor with parameters" << endl << endl;
-	_getch();			//очікування натискання кнопки
+	//cout << "Employee " << this << " constructor with parameters" << endl << endl;
+	//_getch();			//очікування натискання кнопки
 
 	name = new char[strlen(title1) + 1];			//виділення пам'яті
 	strcpy_s(name, strlen(title1) + 1, title1);			//копіювання значення
@@ -32,8 +32,8 @@ Employee::Employee(char* title1, char* title2)
 
 Employee::Employee(Employee& temp)
 {
-	cout << "Employee " << this << " copy constructor" << endl << endl;
-	_getch();			//очікування натискання кнопки
+	//cout << "Employee " << this << " copy constructor" << endl << endl;
+	//_getch();			//очікування натискання кнопки
 
 	name = new char[strlen(temp.get_name()) + 1];			//виділення пам'яті
 	strcpy_s(name, strlen(temp.get_name()) + 1, temp.get_name());			//копіювання значення
@@ -43,8 +43,8 @@ Employee::Employee(Employee& temp)
 
 Employee::~Employee()
 {
-	cout << "Employee " << this << " destructor" << endl << endl;
-	_getch();			//очікування натискання кнопки
+	//cout << "Employee " << this << " destructor" << endl << endl;
+	//_getch();			//очікування натискання кнопки
 
 	delete[] name, surname;			//очищення пам'яті
 }

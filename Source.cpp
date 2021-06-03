@@ -15,32 +15,29 @@ using namespace std;		//для потокового вводу-виводу
 
 int main() {
 	
-	vector<Employee*> taxi(3);			//створення вектора посилань на "співробітника"
-	
 	char* temp1, * temp2, * temp3, * temp4;
 	temp1 = new char[1];
 	temp2 = new char[1];
 	temp3 = new char[1];
 	temp4 = new char[1];
 
-	cout << "Enter employee name and surname:" << endl;
-	cin >> temp1 >> temp2;
-	cout << endl;
-	taxi[0] = new Employee(temp1, temp2);			//заповнення першого значення вектора
-
-	cout << "Enter driver name, surname, car, place:" << endl;
+	cout << "Enter first driver name, surname, car, place:" << endl;
 	cin >> temp1 >> temp2 >> temp3 >> temp4;
 	cout << endl;
-	taxi[1] = new Driver(temp1, temp2, temp3, temp4);			//заповнення другого значення вектора
+	Driver d1(temp1, temp2, temp3, temp4);	
+	d1.description();
 
-	cout << "Enter operator name, surname, phone, language:" << endl;
+	cout << "Enter second driver name, surname, car, place:" << endl;
 	cin >> temp1 >> temp2 >> temp3 >> temp4;
 	cout << endl;
-	taxi[2] = new Operator(temp1, temp2, temp3, temp4);			//заповнення третього значення вектора
+	Driver d2(temp1, temp2, temp3, temp4);
+	d2.description();
 
-	for (Employee* item : taxi) {
-		item->description();			//виклик функції опису для елементів вектору
-	}
+	cout << "Enter third driver name, surname, car, place:" << endl;
+	cin >> temp1 >> temp2 >> temp3 >> temp4;
+	cout << endl;
+	Driver d3(temp1, temp2, temp3, temp4);
+	d3.description();
 
 	_getch();			//очікування натискання кнопки
 }
