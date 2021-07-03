@@ -34,6 +34,18 @@ Trip::Trip(char* title1, char* title2, Driver& temp, int n)
 	cost = n;
 }
 
+Trip::Trip(char* title1, char* title2, int n)
+{
+	//cout << "Trip " << this << " constructor with parameters" << endl << endl;
+	//_getch();			//очікування натискання кнопки
+
+	from = new char[strlen(title1) + 1];			//виділення пам'яті
+	strcpy_s(from, strlen(title1) + 1, title1);			//копіювання значення
+	to = new char[strlen(title2) + 1];			//виділення пам'яті
+	strcpy_s(to, strlen(title2) + 1, title2);			//копіювання значення
+	cost = n;
+}
+
 Trip::~Trip()
 {
 	//cout << "Trip " << this << " destructor" << endl << endl;
@@ -125,7 +137,6 @@ bool operator<(Trip& temp1, Trip& temp2)
 
 ostream& operator<<(ostream& out, Trip& temp)
 {
-	out << "Trip from " << temp.get_from() << " to " << temp.get_to() << " with " << temp.get_dr().get_name() << " "
-		<< temp.get_dr().get_surname() << " for " << temp.get_cost() << "UAH";			//передання полів в потік
+	out << "Trip to " << temp.get_to() << " for " << temp.get_cost() << "UAH";			//передання полів в потік
 	return out;
 }

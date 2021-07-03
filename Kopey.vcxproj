@@ -23,11 +23,13 @@
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Trip.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Count.h" />
     <ClInclude Include="Driver.h" />
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="Trip.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -15,6 +15,7 @@ class Trip
 public:
 	Trip();			//конструктор за замовчуванням
 	Trip(char*, char*, Driver&, int);			//конструктор з параметрами
+	Trip(char*, char*, int);			//конструктор з параметрами
 	~Trip();			//деструктор
 	char* description();			//опис
 	Trip& set_from(char*);			//модифікатори
